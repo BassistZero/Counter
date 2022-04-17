@@ -9,11 +9,14 @@ class ViewController: UIViewController {
     }
 
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var valueSlider: UISlider!
 
     @IBAction func add(_ sender: UIButton) {
         count += 1
+    }
+
+    @IBAction func decrease(_ sender: UIButton) {
+        count -= 1
     }
 
     @IBAction func reset(_ sender: UIButton) {
@@ -28,7 +31,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         label.text = String(count)
-        addButton.setTitle("Add", for: .normal)
     }
 
 }
