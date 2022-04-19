@@ -6,7 +6,7 @@ final class MainViewController: UIViewController {
 
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var valueSlider: UISlider!
-    @IBOutlet weak var valueTextField: UITextField!
+    @IBOutlet private weak var valueTextField: UITextField!
 
     // MARK: - Public Properties
 
@@ -26,9 +26,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        count = defaults.integer(forKey: "count")
-        label.text = String(count)
-
+        configureCount()
         configureTextFieldDelegate()
         hideKeyboard()
     }
@@ -39,7 +37,7 @@ final class MainViewController: UIViewController {
 
 extension MainViewController: UITextFieldDelegate {
 
-    func configureTextFieldDelegate() {
+    private func configureTextFieldDelegate() {
         valueTextField.delegate = self
     }
 
@@ -73,6 +71,17 @@ private extension MainViewController {
 
     @IBAction func getValue(_ sender: UISlider) {
         count = Int(valueSlider.value)
+    }
+
+}
+
+// MARK: - Private Methods
+
+private extension MainViewController {
+
+    func configureCount() {
+        count = defaults.integer(forKey: "count")
+        label.text = String(count)
     }
 
     func hideKeyboard() {
