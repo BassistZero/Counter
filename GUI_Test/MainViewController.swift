@@ -12,14 +12,20 @@ final class MainViewController: UIViewController {
     private(set) var count = 0 {
         didSet {
             label.text = String(count)
+            defaults.set(count, forKey: "count")
         }
     }
+
+    // MARK: - Private Properties
+
+    private var defaults = UserDefaults.standard
 
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        count = defaults.integer(forKey: "count")
         label.text = String(count)
     }
 
