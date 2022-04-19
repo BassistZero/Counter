@@ -73,6 +73,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Value" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KgF-ke-76w">
+                                <rect key="frame" x="146.66666666666666" y="219" width="97" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="Lfg-x0-oDg"/>
+                                    <constraint firstAttribute="height" constant="34" id="i4w-4k-dmi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -82,13 +91,16 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cDb-X3-e4y" secondAttribute="trailing" constant="15" id="ONm-cp-VTO"/>
                             <constraint firstItem="XFI-r5-q5n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="e2G-Oz-FfC"/>
                             <constraint firstItem="XFI-r5-q5n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="efE-vo-1Tg"/>
+                            <constraint firstItem="KgF-ke-76w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oep-Et-m21"/>
                             <constraint firstItem="cDb-X3-e4y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="rWJ-KO-uzX"/>
+                            <constraint firstItem="KgF-ke-76w" firstAttribute="top" secondItem="cDb-X3-e4y" secondAttribute="bottom" constant="15" id="ukl-sI-VVg"/>
                             <constraint firstItem="k1j-O8-VkZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uks-iL-FrM"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="label" destination="XFI-r5-q5n" id="XBl-8w-6eT"/>
                         <outlet property="valueSlider" destination="cDb-X3-e4y" id="pU0-5Z-Zxl"/>
+                        <outlet property="valueTextField" destination="KgF-ke-76w" id="UvQ-LI-weI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

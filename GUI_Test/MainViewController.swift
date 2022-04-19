@@ -6,6 +6,7 @@ final class MainViewController: UIViewController {
 
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var valueSlider: UISlider!
+    @IBOutlet weak var valueTextField: UITextField!
 
     // MARK: - Public Properties
 
@@ -27,6 +28,29 @@ final class MainViewController: UIViewController {
 
         count = defaults.integer(forKey: "count")
         label.text = String(count)
+
+        configureTextFieldDelegate()
+        hideKeyboard()
+    }
+
+}
+
+// MARK: - UITextFieldDelegate
+
+extension MainViewController: UITextFieldDelegate {
+
+    func configureTextFieldDelegate() {
+        valueTextField.delegate = self
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let stringValue = (textField.text ?? "0") + string
+        count = Int(stringValue) ?? 0
+        return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.text = ""
     }
 
 }
@@ -49,6 +73,15 @@ private extension MainViewController {
 
     @IBAction func getValue(_ sender: UISlider) {
         count = Int(valueSlider.value)
+    }
+
+    func hideKeyboard() {
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        let swipe = UISwipeGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        swipe.direction = .down
+
+        view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(swipe)
     }
 
 }
