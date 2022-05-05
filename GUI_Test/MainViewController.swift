@@ -4,7 +4,8 @@ final class MainViewController: UIViewController {
 
     // MARK: - Private Outlets
 
-    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var countLabel: UILabel!
+    @IBOutlet private weak var resetLabel: UIButton!
     @IBOutlet private weak var valueSlider: UISlider!
     @IBOutlet private weak var valueTextField: UITextField!
 
@@ -12,8 +13,9 @@ final class MainViewController: UIViewController {
 
     private(set) var count = 0 {
         didSet {
-            label.text = String(count)
+            countLabel.text = String(count)
             defaults.set(count, forKey: "count")
+            resetLabel.isHidden = count == 0
         }
     }
 
@@ -81,7 +83,7 @@ private extension MainViewController {
 
     func configureCount() {
         count = defaults.integer(forKey: "count")
-        label.text = String(count)
+        countLabel.text = String(count)
     }
 
     func hideKeyboard() {

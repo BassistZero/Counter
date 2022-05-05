@@ -19,20 +19,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="k1j-O8-VkZ">
                                 <rect key="frame" x="37" y="129" width="316" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cy-yD-kWT" userLabel="Add">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="8wa-sy-Wcg"/>
-                                            <constraint firstAttribute="height" constant="30" id="ci3-KF-tfa"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Add"/>
-                                        <connections>
-                                            <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tSU-Hk-EiY"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gs3-8Z-RYp">
-                                        <rect key="frame" x="108" y="0.0" width="100" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Jz1-oX-3sZ"/>
                                             <constraint firstAttribute="height" constant="30" id="ZeB-aj-IEb"/>
@@ -44,7 +32,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hv-mv-dNV">
-                                        <rect key="frame" x="216" y="0.0" width="100" height="30"/>
+                                        <rect key="frame" x="108" y="0.0" width="100" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="AGR-IT-Qyv"/>
                                             <constraint firstAttribute="height" constant="30" id="WoF-fk-Ngk"/>
@@ -53,6 +41,18 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Reset"/>
                                         <connections>
                                             <action selector="reset:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6zF-U1-ARG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cy-yD-kWT" userLabel="Add">
+                                        <rect key="frame" x="216" y="0.0" width="100" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="8wa-sy-Wcg"/>
+                                            <constraint firstAttribute="height" constant="30" id="ci3-KF-tfa"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Add"/>
+                                        <connections>
+                                            <action selector="add:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tSU-Hk-EiY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -98,7 +98,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="label" destination="XFI-r5-q5n" id="XBl-8w-6eT"/>
+                        <outlet property="countLabel" destination="XFI-r5-q5n" id="XBl-8w-6eT"/>
+                        <outlet property="resetLabel" destination="1hv-mv-dNV" id="mxB-yq-IVM"/>
                         <outlet property="valueSlider" destination="cDb-X3-e4y" id="pU0-5Z-Zxl"/>
                         <outlet property="valueTextField" destination="KgF-ke-76w" id="UvQ-LI-weI"/>
                     </connections>
